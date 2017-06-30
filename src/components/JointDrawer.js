@@ -6,7 +6,7 @@ import IconRight from 'material-ui/svg-icons/image/navigate-next';
 import IconLeft from 'material-ui/svg-icons/image/navigate-before';
 import Radium from 'radium';
 import color from 'color';
-import {logger, undefNullNaNChecker} from 'components/utilities/commonUtilities';
+import {logger, undefNullNaNChecker} from './commonUtilities';
 
 // noinspection JSUnresolvedFunction
 const shiftControllerStyles = {

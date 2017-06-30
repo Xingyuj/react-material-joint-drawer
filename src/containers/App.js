@@ -10,8 +10,11 @@ import React, {
 } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import { systemInput } from '../actions/systemActions';
 import Main from '../components/App';
+
+injectTapEventPlugin();
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
@@ -23,11 +26,10 @@ class App extends Component {
  * HINT: if you adjust the initial type of your reducer, you will also have to
  *       adjust it here.
  */
-App.propTypes = { actions: PropTypes.shape({ toggle: PropTypes.func.isRequired }) };
 function mapStateToProps(state) {
   // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
-  const props = {state};
+  const props = {...state};
   return props;
 }
 function mapDispatchToProps(dispatch) {
