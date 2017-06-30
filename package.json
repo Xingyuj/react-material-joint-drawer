@@ -71,15 +71,16 @@
   "dependencies": {
     "color": "^1.0.3",
     "cross-env": "^3.2.4",
-    "prop-types": "^15.5.10",
-    "radium": "^0.19.1",
     "material-ui": "^0.18.1",
     "material-ui-icons": "^1.0.0-alpha.3",
+    "prop-types": "^15.5.10",
+    "radium": "^0.19.1",
     "react": "^15.0.1",
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.0.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.5",
+    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.1",
     "webpack": "^2.1.0-beta.6"
   }

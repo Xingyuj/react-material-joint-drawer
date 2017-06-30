@@ -10,13 +10,13 @@ import React, {
 } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {} from '../actions/';
+import { systemInput } from '../actions/systemActions';
 import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const { actions } = this.props;
-    return <Main actions={actions} />;
+    const {actions} = this.props;
+    return <Main actions={actions}/>;
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -24,17 +24,16 @@ class App extends Component {
  * HINT: if you adjust the initial type of your reducer, you will also have to
  *       adjust it here.
  */
-App.propTypes = {
-  actions: PropTypes.shape({})
-};
-function mapStateToProps(state) { // eslint-disable-line no-unused-vars
+App.propTypes = { actions: PropTypes.shape({ toggle: PropTypes.func.isRequired }) };
+function mapStateToProps(state) {
+  // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
   const props = {};
   return props;
 }
 function mapDispatchToProps(dispatch) {
   /* Populated by react-webpack-redux:action */
-  const actions = {};
+  const actions = { systemInput };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
   return actionMap;
 }

@@ -1,22 +1,43 @@
 import React from 'react';
-import YeomanImage from './YeomanImage';
-import './app.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import JointDrawer from './JointDrawer';
 
 class AppComponent extends React.Component {
 
   render() {
-    return (
-      <div className="index">
-        <YeomanImage />
-        <div className="notice">
-          Please edit <code>src/components/App.js</code> to get started!
+    const rightChildren = (
+      <div>
+        <p>Right Section</p>
+      </div>
+    );
+
+    const leftChildren = (
+      <div>
+        <div>
+          <p>Left Section</p>
         </div>
       </div>
+    );
+
+    return (
+      <MuiThemeProvider muiTheme={this.muiTheme}>
+        <JointDrawer
+          show="both"
+          status={this.props.system.status}
+          rightChildren={rightChildren}
+          leftChildren={leftChildren}
+          statusManipulate={this.props.actions.systemInput}
+        />
+      </MuiThemeProvider>
     );
   }
 }
 
-AppComponent.defaultProps = {
-};
+AppComponent.defaultProps = {};
 
 export default AppComponent;
+
+AppComponent.propTypes = {
+  actions: PropTypes.shape({systemInput: PropTypes.func}),
+  system: PropTypes.shape({dashboardStatus: PropTypes.number}),
+};
