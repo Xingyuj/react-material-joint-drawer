@@ -1,0 +1,9 @@
+{
+  "generator-react-webpack": {
+    "appName": "react-material-joint-drawer",
+    "style": "scss",
+    "cssmodules": true,
+    "postcss": true,
+    "generatedWithVersion": 4
+  }
+}
