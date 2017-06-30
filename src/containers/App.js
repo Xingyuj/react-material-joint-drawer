@@ -15,8 +15,7 @@ import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const {actions} = this.props;
-    return <Main actions={actions}/>;
+    return <Main {...this.props} />;
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -28,7 +27,7 @@ App.propTypes = { actions: PropTypes.shape({ toggle: PropTypes.func.isRequired }
 function mapStateToProps(state) {
   // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
-  const props = {};
+  const props = {state};
   return props;
 }
 function mapDispatchToProps(dispatch) {

@@ -57,7 +57,7 @@ class JointDrawer extends Component {
       disableLeft: status === -1,
       disableRight: status === 1,
     });
-    this.handleStatusChange = this.props.statusManipulate;
+    this.handleStatusChange = this.props.statusManipulator;
     logger('[JointDrawer] will mount status: ', status);
   }
 
@@ -128,7 +128,7 @@ class JointDrawer extends Component {
     }
     this.setState({[`disable${disable}`]: false});
     // this.setState({status: result});
-    this.handleStatusChange('dashboardStatus', result);
+    this.handleStatusChange('status', result);
     logger('[JointDrawer] handle shift status to: ', result);
   }
 
@@ -187,7 +187,7 @@ JointDrawer.propTypes = {
   leftChildren: PropTypes.shape(),
   rightChildren: PropTypes.shape(),
   show: PropTypes.string,
-  statusManipulate: PropTypes.func,
+  statusManipulator: PropTypes.func,
 };
 
 
@@ -195,7 +195,6 @@ JointDrawer.defaultProps = {
   disableSwipeToOpen: false,
   docked: true,
   open: null,
-  openSecondary: false,
   swipeAreaWidth: 30,
   width: null,
   zDepth: 2,

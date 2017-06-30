@@ -1,5 +1,6 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import PropTypes from 'prop-types';
 import JointDrawer from './JointDrawer';
 
 class AppComponent extends React.Component {
@@ -26,7 +27,7 @@ class AppComponent extends React.Component {
           status={this.props.system.status}
           rightChildren={rightChildren}
           leftChildren={leftChildren}
-          statusManipulate={this.props.actions.systemInput}
+          statusManipulator={this.props.actions.systemInput}
         />
       </MuiThemeProvider>
     );
@@ -39,5 +40,5 @@ export default AppComponent;
 
 AppComponent.propTypes = {
   actions: PropTypes.shape({systemInput: PropTypes.func}),
-  system: PropTypes.shape({dashboardStatus: PropTypes.number}),
+  system: PropTypes.shape({status: PropTypes.number}),
 };
