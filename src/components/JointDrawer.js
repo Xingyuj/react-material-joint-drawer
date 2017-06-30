@@ -202,7 +202,7 @@ JointDrawer.defaultProps = {
 
 JointDrawer.contextTypes = {
   muiTheme: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object,
 };
 
 export default Radium(JointDrawer);
